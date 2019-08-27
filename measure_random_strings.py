@@ -32,7 +32,7 @@ def test_time(executions=1000000):
     print('uuid: {} seconds'.format(time_uuid))
 
 
-def _test_collisions(func, executions=1000000):
+def _test_func(func, executions=1000000):
     ok, collision = 0, 0
     names = set()
     for _ in range(executions):
@@ -54,7 +54,7 @@ def test_collisions():
 
     for func in tests:
         start = time.time()
-        ok, bad = _test_collisions(func)
+        ok, bad = _test_func(func)
         end = time.time()
 
         print('{} results'.format(func.__name__))
