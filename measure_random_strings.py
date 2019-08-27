@@ -25,8 +25,7 @@ def test_time(executions=1000000):
                               setup='from __main__ import Names',
                               number=executions)
 
-    print(
-        'Generating random names (6 characters long) using UUIDs and os.urandom')
+    print('Generating random names (6 characters long) using UUIDs and os.urandom')
     print('Running {:,} times...'.format(executions))
     print('-' * 25)
     print('urandom: {} seconds'.format(time_urandom))
@@ -62,12 +61,11 @@ def test_collisions():
         print('-' * 30)
         print('{bad} collisions, {ok} ok, {total} total | '
               .format(bad=bad, ok=ok, total=bad + ok), end='')
-        print('runtime: {} seconds'.format(end - start))
-        print()
+        print('runtime: {} seconds\n'.format(end - start))
 
 
 def main():
-    # test_time()
+    test_time()
     test_collisions()
 
 
